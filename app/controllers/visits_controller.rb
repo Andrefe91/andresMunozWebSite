@@ -4,7 +4,16 @@ class VisitsController < ApplicationController
     @visit = Visit.new(visit_params)
 
     if @visit.save
-      redirect_to root_path, notice: 'Visit was successfully created.'
+      # Redirect to the destination URL
+
+      case @visit.destination
+        when 'linkedin'
+          redirect_to 'https://www.linkedin.com/in/andres-felipe-m/?locale=en_US', allow_other_host: true
+        when 'youtube'
+          redirect_to 'https://www.youtube.com/', allow_other_host: true
+        else
+          redirect_to root_path, alert: 'Invalid destination.'
+      end
     else
       redirect_to root_path, alert: 'Error creating visit.'
     end
