@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   root "pages#index"
+  get "pages/index"
   get "/projects", to: "pages#projects"
   get "/tools", to: "pages#tools"
   get "/contact", to: "pages#contact"

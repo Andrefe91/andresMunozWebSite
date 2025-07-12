@@ -1,5 +1,4 @@
 class VisitsController < ApplicationController
-
   def create
     @visit = Visit.new(visit_params)
 
@@ -7,15 +6,15 @@ class VisitsController < ApplicationController
       # Redirect to the destination URL
 
       case @visit.destination
-        when 'linkedin'
-          redirect_to 'https://www.linkedin.com/in/andres-felipe-m/?locale=en_US', allow_other_host: true
-        when 'youtube'
-          redirect_to 'https://www.youtube.com/', allow_other_host: true
-        else
-          redirect_to root_path, alert: 'Invalid destination.'
+      when "linkedin"
+          redirect_to "https://www.linkedin.com/in/andres-felipe-m/?locale=en_US", allow_other_host: true
+      when "youtube"
+          redirect_to "https://www.youtube.com/", allow_other_host: true
+      else
+          redirect_to root_path, alert: "Invalid destination."
       end
     else
-      redirect_to root_path, alert: 'Error creating visit.'
+      redirect_to root_path, alert: "Error creating visit."
     end
   end
 
@@ -23,6 +22,6 @@ class VisitsController < ApplicationController
 
   def visit_params
     # Params assignment to prevent other attributes from being set
-    {destination: params[:destination], ip: request.remote_ip}
+    { destination: params[:destination], ip: request.remote_ip }
   end
 end
