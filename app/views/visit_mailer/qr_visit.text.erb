@@ -2,7 +2,8 @@ New Visit through the QR card
 
 Hi Andres !!, a new visit has accoured through the QR code. This is the information of the visit:
 
-- Destination: <%= @visit.destination %>
+- Destination: <%= @visit.destination.capitalize %>
 - Ip: <%= @visit.ip %>
+- Card distribution point: <%= @visit.location.capitalize %>
 
 Cheers !!
