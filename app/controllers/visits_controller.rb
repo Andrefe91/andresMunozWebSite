@@ -22,6 +22,8 @@ class VisitsController < ApplicationController
 
   def visit_params
     # Params assignment to prevent other attributes from being set
-    { destination: params[:destination], ip: request.remote_ip }
+    # Remeber, the location can be spoofed modifying the parameter in the URL, this is just for reference only.
+    # So far, this is the URL used to distribute the QR code: /qr?destination=foo&location=bar
+    { destination: params[:destination], ip: request.remote_ip, location: params[:location] }
   end
 end

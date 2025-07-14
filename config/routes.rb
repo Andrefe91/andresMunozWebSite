@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get "/projects", to: "pages#projects"
   get "/tools", to: "pages#tools"
   get "/contact", to: "pages#contact"
-  get "/qr/:destination", to: "visits#create"
+  get "/qr", to: "visits#create"
 end
