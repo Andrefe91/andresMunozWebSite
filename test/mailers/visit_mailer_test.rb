@@ -1,11 +1,18 @@
 require "test_helper"
 
 class VisitMailerTest < ActionMailer::TestCase
-  test "qr_visit" do
-    mail = VisitMailer.qr_visit
-    assert_equal "Qr visit", mail.subject
-    assert_equal [ "to@example.org" ], mail.to
-    assert_equal [ "from@example.com" ], mail.from
-    assert_match "Hi", mail.body.encoded
+  test "qr_visit sends correct email" do
+    visit = Visit.new(destination: "linkedin", location: "test-place", ip: "127.0.0.1")
+
+    email = VisitMailer.with(visit: visit).qr_visit
+
+    assert_emails 1 do
+      email.deliver_now
+    end
+
+    assert_equal [ Rails.application.credentials.dig(:personal, :email) ], email.to
+    assert_equal [ "andresmunoz.me" ], email.from
+    assert_equal "New visit through the QR card", email.subject
+    assert_match /linkedin/i, email.body.encoded
   end
 end

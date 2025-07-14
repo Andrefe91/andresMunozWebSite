@@ -1,20 +1,21 @@
 class VisitsController < ApplicationController
   def create
+    # Ensure the destination is one of the allowed values
+    unless %w[linkedin youtube].include?(params[:destination])
+      redirect_to root_path, alert: "Invalid destination." and return
+    end
+
     @visit = Visit.new(visit_params)
 
     if @visit.save
-      # Send the visit information via email
       VisitMailer.with(visit: @visit).qr_visit.deliver_now
 
-      # Redirect to the destination URL
-      case @visit.destination
+      redirect_to case @visit.destination
       when "linkedin"
-            redirect_to "https://www.linkedin.com/in/andres-felipe-m/?locale=en_US", allow_other_host: true
+        "https://www.linkedin.com/in/andres-felipe-m/?locale=en_US"
       when "youtube"
-            redirect_to "https://www.youtube.com/", allow_other_host: true
-      else
-            redirect_to root_path, alert: "Invalid destination."
-      end
+        "https://www.youtube.com/"
+      end, allow_other_host: true
     else
       redirect_to root_path, alert: "Error creating visit."
     end
