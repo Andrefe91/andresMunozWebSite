@@ -23,10 +23,22 @@
 
   </head>
 
-  <body>
-    <div class="alert"><%= flash[:alert] %></
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="bg-primary min-h-screen flex flex-col font-textBasis text-textColor">
+    <div class="alert"> <%= flash[:alert] %> </div>
+    <main class="container mx-auto mt-0 px-5 pt-2 flex flex-col flex-grow border-r-2 border-l-2 border-borderColor/12">
+
+    <nav class="container flex justify-end mb-5">
+      <div class="flex">
+        <%= render "layouts/navLinks", links: [
+          ["Home", root_path],
+          ["Projects", projects_path],
+          ["Tools", tools_path],
+          ["Contact", contact_path]
+        ] %>
+      </div>
+    </nav>
+
+    <%= yield %>
     </main>
   </body>
 </html>

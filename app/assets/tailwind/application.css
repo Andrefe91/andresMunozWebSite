@@ -1,1 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+	--font-textBasis: "Inter", sans-serif;
+	--color-primary: #33445c;
+	--color-borderColor: #ababab;
+	--color-textColor: #d1d1d1;
+	--color-textColorBack: #182b47;
+}
+
+@layer components {
+	.textNameShadow {
+		text-shadow: 2px 1px 0px #182b47, 4px 2px 0px #071426;
+	}
+
+	.textTitleSection {
+		margin-bottom: 1rem;
+	}
+
+	.container.section p {
+		margin-bottom: 1rem;
+	}
+}
