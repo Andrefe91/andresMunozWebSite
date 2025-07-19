@@ -4,6 +4,7 @@
 @theme {
 	--font-textBasis: "Inter", sans-serif;
 	--color-primary: #33445c;
+	--color-tint: #f9564f;
 	--color-borderColor: #ababab;
 	--color-textColor: #d1d1d1;
 	--color-textColorBack: #182b47;
@@ -14,11 +15,44 @@
 		text-shadow: 2px 1px 0px #182b47, 4px 2px 0px #071426;
 	}
 
+	.section {
+		padding: 1rem;
+		margin-bottom: 1rem;
+
+		background: rgba(255, 255, 255, 0.03);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(2.9px);
+		-webkit-backdrop-filter: blur(2.9px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
 	.textTitleSection {
 		margin-bottom: 1rem;
 	}
 
 	.container.section p {
 		margin-bottom: 1rem;
+	}
+
+	body::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'>\
+      <filter id='noiseFilter'>\
+        <feTurbulence type='fractalNoise' baseFrequency='6' numOctaves='5' stitchTiles='stitch'/>\
+      </filter>\
+      <rect width='100%' height='100%' filter='url(%23noiseFilter)'/>\
+    </svg>");
+		background-size: 300px 300px;
+		background-blend-mode: overlay;
+		opacity: 0.15;
+		z-index: -1;
+		pointer-events: none;
 	}
 }

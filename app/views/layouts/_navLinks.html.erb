@@ -1,5 +1,5 @@
 <% links.each_with_index do |(text, path), index| %>
-  <%= link_to text, path, class: "hover:underline hover:underline-offset-4 text-textColor hover:text-stone-50" %>
+  <%= link_to text, path, class: "hover:underline hover:decoration-2 hover:decoration-tint hover:underline-offset-4 text-textColor hover:text-stone-50" %>
 
   <%# Only add the slash divider if it's not the last link %>
   <% unless index == links.size - 1 %>
