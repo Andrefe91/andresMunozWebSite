@@ -35,7 +35,7 @@
     <div class="container flex flex-col md:flex-row-reverse">
       <p class="flex">Here are some of the software tools I regularly use for structural calculations and design. This isn&#39t a complete or exhaustive list—just the ones I currently work with most often. I&#39m always open to learning new programs as needed.</p>
 
-      <div class="flex flex-wrap md:min-w-md gap-x-5 gap-y-4 justify-center-safe md:mr-4 md:border-r-2 border-dashed">
+      <div class="flex flex-wrap md:min-w-md gap-x-5 gap-y-4 justify-center-safe md:mr-4 md:border-r-2 border-dashed content-center">
         <div class="flex-shrink-0 drop-shadow-md/30 hover:scale-115 hover:drop-shadow-md/100 hover:drop-shadow-icon-shadow/100 duration-100 ease-in-out transform-gpu">
           <%= image_tag "icons/logo_autocad.svg", alt:"Autocad Logo", class: "object-contain h-16" %>
         </div>
@@ -71,10 +71,10 @@
   <div class="container section text-justify">
     <div class="text-2xl textTitleSection text-center font-titleBasis">And more!</div>
 
-    <div class="container flex flex-col md:flex-row">
+    <div class="container flex flex-col md:flex-row ">
       <p class="flex">Outside of my main career, I enjoy programming, photography, rendering, and drawing. So far, I&#39ve published one project—a free tool for gesture drawing practice called Pose Player—and I&#39m currently developing another, aimed at viewing, creating, and editing BVBS files for the construction industry.</p>
 
-      <div class="flex flex-wrap grow md:min-w-md gap-x-5 gap-y-4 justify-center-safe md:ml-4 md:border-l-2 border-dashed">
+      <div class="flex flex-wrap grow md:min-w-md gap-x-5 gap-y-4 justify-center-safe md:ml-4 md:border-l-2 border-dashed content-center">
         <div class="flex-shrink-0 drop-shadow-md/30 hover:scale-115 hover:drop-shadow-md/100 hover:drop-shadow-icon-shadow/100 duration-100 ease-in-out transform-gpu">
           <%= image_tag "icons/logo_blender.svg", alt:"Blender Logo", class: "object-contain h-16 " %>
         </div>
@@ -115,7 +115,15 @@
     bg-button cursor-pointer inset-ring hover: hover:bg-buttonHover hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 text-lg text-textColor font-bold px-8 py-3 rounded-md mt-5 duration-200 ease-in-out
     " %>
 
-    
+    <div class="container flex flex-row justify-center mt-4 gap-4 ">
+      <a href="https://www.linkedin.com/in/andres-felipe-m/?locale=en_US">
+        <%= inline_svg_tag "icons/logo_linkedin.svg", alt:"LinkedIn Logo", class: "object-contain h-7 fill-textColor hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 hover:stroke-button hover:stroke-2" %>
+      </a>
+
+      <a href="https://github.com/Andrefe91">
+        <%= inline_svg_tag "icons/logo_github.svg", alt:"Github Logo", class: "object-contain h-7 fill-textColor hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 hover:stroke-button hover:stroke-2" %>
+      </a>
+    </div>
 
   </div>
 
