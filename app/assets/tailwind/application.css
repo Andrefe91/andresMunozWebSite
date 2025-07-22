@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import "tailwindcss";
 
 @theme {
 	--font-textBasis: "Inter", sans-serif;
+    --font-titleBasis: "Russo One", sans-serif;
 	--color-primary: #33445c;
 	--color-tint: #f9564f;
+    --color-button: #11927D;
+    --color-buttonHover: #15B097;
+    --color-buttonShadow: #0A2342;
 	--color-borderColor: #ababab;
+    --color-icon-shadow: #0A2342;
 	--color-textColor: #d1d1d1;
 	--color-textColorBack: #182b47;
 }
@@ -28,7 +34,7 @@
 	}
 
 	.textTitleSection {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
 	}
 
 	.container.section p {
@@ -55,4 +61,9 @@
 		z-index: -1;
 		pointer-events: none;
 	}
+
+    form {
+        display: flex;
+        justify-content: center;
+    }
 }
