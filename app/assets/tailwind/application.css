@@ -1,20 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 @import "tailwindcss";
 
 @theme {
 	--font-textBasis: "Inter", sans-serif;
-    --font-titleBasis: "Russo One", sans-serif;
+	--font-titleBasis: "Russo One", sans-serif;
+
 	--color-primary: #33445c;
 	--color-tint: #f9564f;
-    --color-button: #11927D;
-    --color-buttonHover: #15B097;
-    --color-buttonShadow: #0A2342;
+
+	--color-button: #11927d;
+	--color-buttonHover: #15b097;
+
+	--color-buttonShadow: #0a2342;
 	--color-borderColor: #ababab;
-    --color-icon-shadow: #0A2342;
+
+	--color-icon-shadow: #0a2342;
+
 	--color-textColor: #d1d1d1;
 	--color-textColorBack: #182b47;
-    --color-listMarkers: #71F79F;
+
+	--color-listMarkers: #71f79f;
+	--color-skillContentBackground: #2D3142;
+	--color-skillTitleDecoration: #71f79f;
 }
 
 @layer components {
@@ -32,6 +40,31 @@
 		backdrop-filter: blur(2.9px);
 		-webkit-backdrop-filter: blur(2.9px);
 		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.slideBackgroundSettings::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover;
+		background-position: center;
+		opacity: 0.15; /* Adjust opacity here */
+		z-index: -1;
+	}
+
+	.slideBackground_1::before {
+		background-image: url("/backgrounds/background_1.jpg");
+	}
+
+	.slideBackground_2::before {
+		background-image: url("/backgrounds/background_2.jpg");
+	}
+
+	.slideBackground_3::before {
+		background-image: url("/backgrounds/background_3.jpg");
 	}
 
 	.textTitleSection {
@@ -63,9 +96,8 @@
 		pointer-events: none;
 	}
 
-    form {
-        display: flex;
-        justify-content: center;
-    }
+	form {
+		display: flex;
+		justify-content: center;
+	}
 }
-
