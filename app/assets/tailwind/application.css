@@ -21,8 +21,42 @@
 	--color-textColorBack: #182b47;
 
 	--color-listMarkers: #71f79f;
-	--color-skillContentBackground: #2D3142;
+	--color-skillContentBackground: #2d3142;
 	--color-skillTitleDecoration: #71f79f;
+
+	--animate-bounce: bounce 3s ease-in-out infinite;
+
+	@keyframes bounce {
+		10% {
+			transform: translateY(-30%);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+		0%,
+		20% {
+			transform: none;
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+
+		25% {
+			transform: translateY(-10%);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+
+		28% {
+			transform: none;
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+
+		30% {
+			transform: translateY(-5%);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+
+		32% {
+			transform: none;
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+	}
 }
 
 @layer components {
@@ -65,10 +99,6 @@
 
 	.slideBackground_3::before {
 		background-image: url("/backgrounds/background_3.jpg");
-	}
-
-	.textTitleSection {
-		margin-bottom: 1.5rem;
 	}
 
 	.container.section p {

@@ -1,0 +1,97 @@
+<div class="container">
+    <p>I developed this tool after i couldn&#39t find a good web base application for managing and displaying pictures that i
+        regularly would use for my gesture drawing practice sessions. The idea was to have a simple and intuitive
+        interface that would allow me to quickly load a set of images, display them in a grid format, and then cycle
+        through them with a simple click or tap. The app also allows for easy navigation between images, making it
+        perfect for quick reference during drawing sessions with usefull functions to adapt the to the user preference.
+    </p>
+
+    <p>As i didn&#39t require a cloud storage (all the images are always local to the user device), tracking or accounts,
+        it made easy the choice to go purely frontend, with React and vanilla Javascript as the main tools for it&#39s development.
+    </p>
+
+    <p>At the moments the app it&#39s feature complete, with some quality of life and small functions coming in the future.</p>
+
+
+    <div class="container flex justify-center">
+        <a href="https://github.com/Andrefe91/project_poseSketch" target="_blank" rel="noopener noreferrer">
+        <%= inline_svg_tag "icons/logo_githubRepository2.svg", alt: "github repository logo",
+        class: "object-contain hidden lg:inline lg:h-13 fill-textColor stroke-(--color-textColor) drop-shadow-lg/20 hover:drop-shadow-xl hover:drop-shadow-emerald-300" %>
+        </a>
+    </div>
+</div>
+
+<div class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto space-y-4">
+    <!-- Main Carousel -->
+    <section id="main-carousel" class="overflow-hidden w-full" data-controller="carousel"
+    data-carousel-loop-value="false"
+    data-carousel-drag-free-value="false"
+    data-carousel-dots-value="false"
+    data-carousel-buttons-value="true">
+    <div class="overflow-hidden outline-hidden mx-4 sm:mx-6 md:mx-8 cursor-grab active:cursor-grabbing" data-carousel-target="viewport">
+        <div class="flex">
+        <div class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-full min-w-0 max-w-150 p-2 text-center rounded-xl border border-neutral-200/20 bg-neutral-50/10 relative select-none">
+            <%= image_tag "tools/posePlayer/screenshot_1.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+        </div>
+
+        <div class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-full min-w-0 p-2 text-center rounded-xl border border-neutral-200/20 bg-neutral-50/10 relative select-none">
+            <%= image_tag "tools/posePlayer/screenshot_2.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+        </div>
+
+        <div class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-full min-w-0 p-2 text-center rounded-xl border border-neutral-200/20 bg-neutral-50/10 relative select-none">
+            <%= image_tag "tools/posePlayer/screenshot_3.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+        </div>
+
+        <div class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-full min-w-0 p-2 text-center rounded-xl border border-neutral-200/20 bg-neutral-50/10 relative select-none">
+            <%= image_tag "tools/posePlayer/screenshot_4.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+        </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center items-center mt-4 px-4 sm:px-6 md:px-8">
+        <div class="grid grid-cols-2 gap-2 items-center">
+        <button class="cursor-pointer flex items-center justify-center size-10 rounded-full bg-(--color-button) p-2 text-sm font-semibold text-neutral-800 shadow-xs hover:bg-(--color-buttonHover) outline-hidden border border-neutral-200 disabled:opacity-40 disabled:cursor-not-allowed" type="button" data-carousel-target="prevButton" aria-label="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-textColor size-4" width="18" height="18" viewBox="0 0 18 18"><g fill="currentColor"><path d="M11.5 16C11.308 16 11.116 15.9271 10.97 15.7801L4.71999 9.53005C4.42699 9.23705 4.42699 8.76202 4.71999 8.46902L10.97 2.21999C11.263 1.92699 11.738 1.92699 12.031 2.21999C12.324 2.51299 12.324 2.98803 12.031 3.28103L6.311 9.001L12.031 14.721C12.324 15.014 12.324 15.489 12.031 15.782C11.885 15.928 11.693 16.002 11.501 16.002L11.5 16Z"></path></g></svg>
+        </button>
+
+        <button class="cursor-pointer flex items-center justify-center size-10 rounded-full bg-(--color-button) p-2 text-sm font-semibold text-neutral-800 shadow-xs hover:bg-(--color-buttonHover) outline-hidden border border-neutral-200 disabled:opacity-40 disabled:cursor-not-allowed" type="button" data-carousel-target="nextButton" aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-textColor size-4" width="18" height="18" viewBox="0 0 18 18"><g fill="currentColor"><path d="M13.28 8.46999L7.03 2.21999C6.737 1.92699 6.262 1.92699 5.969 2.21999C5.676 2.51299 5.676 2.98803 5.969 3.28103L11.689 9.001L5.969 14.721C5.676 15.014 5.676 15.489 5.969 15.782C6.115 15.928 6.307 16.002 6.499 16.002C6.691 16.002 6.883 15.929 7.029 15.782L13.279 9.53201C13.572 9.23901 13.572 8.76403 13.279 8.47103L13.28 8.46999Z"></path></g></svg>
+        </button>
+        </div>
+    </div>
+    </section>
+
+    <!-- Thumbnail Carousel -->
+    <section class="overflow-hidden w-full" data-controller="carousel"
+        data-carousel-loop-value="false"
+        data-carousel-drag-free-value="false"
+        data-carousel-dots-value="false"
+        data-carousel-buttons-value="false"
+        data-carousel-thumbnails-value="true"
+        data-carousel-main-carousel-value="main-carousel">
+        <div class="overflow-hidden outline-hidden mx-4 sm:mx-6 md:mx-8 cursor-grab active:cursor-grabbing" data-carousel-target="viewport">
+        <div class="flex">
+            <button class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-1/4 min-w-0 p-2 rounded-lg border-2 border-neutral-600 dark:border-neutral-200 bg-neutral-100 dark:bg-neutral-800 relative select-none hover:border-neutral-700 dark:hover:border-neutral-300 outline-hidden" data-carousel-target="thumbnailButton">
+            <div class="aspect-auto rounded bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                <%= image_tag "tools/posePlayer/screenshot_1.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+            </div>
+            </button>
+            <button class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-1/4 min-w-0 p-2 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 relative select-none hover:border-neutral-400 dark:hover:border-neutral-500 outline-hidden" data-carousel-target="thumbnailButton">
+            <div class="aspect-auto rounded bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                <%= image_tag "tools/posePlayer/screenshot_2.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+            </div>
+            </button>
+            <button class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-1/4 min-w-0 p-2 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 relative select-none hover:border-neutral-400 dark:hover:border-neutral-500 outline-hidden" data-carousel-target="thumbnailButton">
+            <div class="aspect-auto rounded bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                <%= image_tag "tools/posePlayer/screenshot_3.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+            </div>
+            </button>
+            <button class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-1/4 min-w-0 p-2 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 relative select-none hover:border-neutral-400 dark:hover:border-neutral-500 outline-hidden" data-carousel-target="thumbnailButton">
+            <div class="aspect-auto rounded bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                <%= image_tag "tools/posePlayer/screenshot_4.png", alt:"PosePlayer webpage Screenshot", class: "" %>
+            </div>
+            </button>
+        </div>
+        </div>
+    </section>
+</div>
