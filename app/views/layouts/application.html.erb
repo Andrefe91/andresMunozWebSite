@@ -32,13 +32,15 @@
           <%= render "layouts/navLinks", links: [
             ["Home", root_path],
             ["Projects", projects_path],
-            ["Tools", tools_path],
+            ["Web Tools", tools_path],
             ["Contact", contact_path]
           ] %>
         </div>
       </nav>
 
       <%= yield %>
+
+      <%= render "layouts/footbar" %>
     </main>
   </body>
 </html>

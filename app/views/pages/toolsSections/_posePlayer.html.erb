@@ -1,5 +1,5 @@
-<div class="container section text-justify">
-    <div class="container flex flex-col sm:flex-row items-center mb-5 justify-between">
+<div class="container section text-justify mb-10">
+    <div class="container flex flex-row items-center mb-5 justify-between">
       <div class="container flex flex-row items-center">
         <div class="text-2xl textTitleSection text-left font-titleBasis underline decoration-solid">Pose Player</div>
         <a href="https://poseplayer.com/" target="_blank" rel="noopener noreferrer">
@@ -12,9 +12,9 @@
         class: "object-contain inline lg:hidden fill-textColor stroke-(--color-textColor) drop-shadow-lg/20 hover:drop-shadow-xl hover:drop-shadow-emerald-300" %>
       </a>
     </div>
-    
+
     <div class="container flex flex-col lg:flex-row">
-        <div class="container">
+        <div class="container lg:max-w-3/8 ">
             <p>I developed this tool after i couldn&#39t find a good web base application for managing and displaying pictures that i
                 regularly would use for my gesture drawing practice sessions. The idea was to have a simple and intuitive
                 interface that would allow me to quickly load a set of images, display them in a grid format, and then cycle
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto space-y-4">
+        <div class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-6xl xl:max-w-8xl mx-auto space-y-4">
             <!-- Main Carousel -->
             <section id="main-carousel" class="overflow-hidden w-full" data-controller="carousel"
             data-carousel-loop-value="false"
@@ -46,7 +46,7 @@
             data-carousel-buttons-value="true">
             <div class="overflow-hidden outline-hidden mx-4 sm:mx-6 md:mx-8 cursor-grab active:cursor-grabbing" data-carousel-target="viewport">
                 <div class="flex">
-                <div class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-full min-w-0 max-w-150 p-2 text-center rounded-xl border border-neutral-200/20 bg-neutral-50/10 relative select-none">
+                <div class="mr-2 sm:mr-3 md:mr-4 flex-shrink-0 flex-grow-0 basis-full min-w-0 p-2 text-center rounded-xl border border-neutral-200/20 bg-neutral-50/10 relative select-none">
                     <%= image_tag "tools/posePlayer/screenshot_1.png", alt:"PosePlayer webpage Screenshot", class: "" %>
                 </div>
 
