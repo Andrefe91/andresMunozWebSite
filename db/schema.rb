@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_14_065626) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_28_160530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "communications", force: :cascade do |t|
+    t.string "email"
+    t.string "message", limit: 500
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "visits", force: :cascade do |t|
     t.inet "ip"
     t.string "destination"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "location"
+    t.string "location", limit: 25
   end
 end

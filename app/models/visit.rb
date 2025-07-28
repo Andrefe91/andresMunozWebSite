@@ -1,5 +1,5 @@
 class Visit < ApplicationRecord
-  validates :destination, presence: true
+  validates :destination, presence: true, length: { maximum: 25 }
 
   validate :exact_route
 

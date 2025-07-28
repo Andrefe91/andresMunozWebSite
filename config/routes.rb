@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   get "/tools", to: "pages#tools"
   get "/contact", to: "pages#contact"
   get "/qr", to: "visits#create"
+
+  resources :communications, only: [:index, :new, :create]
+
+  post "/contact", to: "communications#create"
 end
