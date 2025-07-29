@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["field", "counter"]
 
   connect() {
-    console.log(this.fieldTarget, this.counterTarget)
     this.updateCount()
   }
 

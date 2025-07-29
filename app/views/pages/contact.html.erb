@@ -1,33 +1,54 @@
-<div data-controller="character-counter">
-  <%= form_with model: @communication, url: communications_path do |form| %>
-    <% if @communication.errors.any? %>
-      <div class="error-messages">
-        <h4><%= pluralize(@communication.errors.count, "error") %> prohibited this message from being saved:</h4>
-        <ul>
-          <% @communication.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+<div class="container max-w-7/8 grow content-center">
+  <div class="personalInformation flex flex-row items-center">
+    <div class="personalImage aspect-square mask-clip-border rounded-3xl  min-w-15 bg-cyan-500"></div>
+    <div class="text-2xl ml-4">Andres Felipe Muñoz</div>
+  </div>
 
-      <div>
-        <%= form.label :message %>
-        <%= form.textarea :message, placeholder: "Write a message...", class: "",
+  <div class="container flex flex-row mt-4">
+    <div class="personalImage aspect-square rounded-3xl  min-w-15 "></div>
+    <p class="text-lg/8 ml-4">Hey there, thank you for visiting my website!
+      Feel free to reach out to me with any questions, comments, or just to say hello!.</p>
+  </div>
+
+  <div data-controller="character-counter" class="mt-5 border rounded-xl p-2 ">
+    <%= form_with model: @communication, class:"flex flex-col divide-y-1 divide-borderColor/35 ", url: communications_path do |form| %>
+
+      <div class="flex flex-row py-2">
+        <%= form.textarea :message, placeholder: "Write a message...", class: "grow caret-button focus:outline-none",
         data: {character_counter_target: "field", action: "input->character-counter#updateCount"} %>
       </div>
 
-      <div>
-        <%= form.label :email %>
-        <%= form.text_field :email, placeholder: "optional@email.com (If you'd like a response)" %>
+      <div class="flex flex-row py-2">
+        <%= form.text_field :email, placeholder: "optional@email.com (If you'd like a response)", class: "grow focus:outline-none" %>
       </div>
 
-      <div class="word-count">
-        Words: <span data-character-counter-target="counter">0</span>/1000
+      <div class="container flex flex-row justify-between items-center mt-2">
+        <div class="word-count">
+          <span data-character-counter-target="counter">0</span><span class="text-textColor/50">/1000</span>
+        </div>
+
+        <div>
+          <%= form.submit "Send", class: "bg-button cursor-pointer hover:bg-buttonHover hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 text-textColor font-bold px-4 py-1 rounded-md mt-5 duration-200 ease-in-out" %>
+        </div>
       </div>
 
-      <div>
-        <%= form.submit "Send" %>
-      </div>
+    <% end %>
+  </div>
+
+  <% if @communication.errors.any? %>
+  <div class="error-messages underline text-red-400 mt-1 text-center">
+    <ul>
+      <% @communication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
 </div>
+
+
+<%= turbo_frame_tag "message_confirmation" do %>
+  <div class="container max-w-7/8 grow content-center">
+    Hello from turbo
+  </div>
+<% end %>

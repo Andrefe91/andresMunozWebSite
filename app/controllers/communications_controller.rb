@@ -18,7 +18,6 @@ class CommunicationsController < ApplicationController
     @communication = Communication.new(communication_params)
 
     if @communication.save
-      puts "Hello from create"
       redirect_to root_path, notice: 'Communication was successfully created.'
     else
       render "pages/contact", status: :unprocessable_entity, notice: 'Error creating communication.'
