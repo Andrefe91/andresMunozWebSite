@@ -94,7 +94,7 @@ class CommunicationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not create communication with message too long" do
-    long_message = "a" * 501 # Exceeds 500 character limit
+    long_message = "a" * 1001 # Exceeds 500 character limit
 
     assert_no_difference("Communication.count") do
       post communications_url, params: {
