@@ -3,7 +3,7 @@ require "test_helper"
 class VisitsControllerTest < ActionDispatch::IntegrationTest
   test "Should create visit and send email, then redirect to LinkedIn" do
     assert_difference "Visit.count", 1 do
-      assert_emails 1 do
+      assert_enqueued_emails 1 do
         get qr_path(destination: "linkedin", location: "test-location")
       end
     end

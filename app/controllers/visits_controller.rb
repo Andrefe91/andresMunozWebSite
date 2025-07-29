@@ -8,8 +8,6 @@ class VisitsController < ApplicationController
     @visit = Visit.new(visit_params)
 
     if @visit.save
-      VisitMailer.with(visit: @visit).qr_visit.deliver_now
-
       redirect_to case @visit.destination
       when "linkedin"
         "https://www.linkedin.com/in/andres-felipe-m/?locale=en_US"

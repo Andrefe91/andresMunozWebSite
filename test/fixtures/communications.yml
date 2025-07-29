@@ -1,9 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  email: MyString
-  message: MyString
+valid_communication:
+  email: "test@example.com"
+  message: "This is a test message from the contact form"
+  created_at: <%= 1.day.ago %>
 
-two:
-  email: MyString
-  message: MyString
+communication_without_email:
+  email: ""
+  message: "This is a message without email"
+  created_at: <%= 2.days.ago %>
+
+long_message:
+  email: "longmessage@example.com"
+  message: "This is a very long message that tests the maximum length validation and ensures that our mailer can handle longer content properly without breaking the email formatting."
+  created_at: <%= 3.days.ago %>

@@ -1,0 +1,13 @@
+<h1>New message through the webpage!</h1>
+
+<p>
+  Hi Andres !!, a new message has been logged into the database of your webpage. This is the information of the message:
+</p>
+
+<ul>
+  <li>Message: <%= @message.message %></li>
+  <li>email: <%= @message.email %></li>
+  <li>Message Date: <%= @message.created_at.strftime("%B %d, %Y at %I:%M %p") %></li>
+</ul>
+
+<p>Cheers !!</p>
