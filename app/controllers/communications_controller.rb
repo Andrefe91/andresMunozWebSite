@@ -1,5 +1,4 @@
 class CommunicationsController < ApplicationController
-
   def index
     @communications = Communication.all
   end
@@ -9,18 +8,40 @@ class CommunicationsController < ApplicationController
   end
 
   def create
-    # Check if communication parameters are present
-    if params[:communication].nil?
-      render plain: "Missing communication parameters", status: :unprocessable_entity
-      return
-    end
-
     @communication = Communication.new(communication_params)
 
-    if @communication.save
-      redirect_to root_path, notice: 'Communication was successfully created.'
-    else
-      render "pages/contact", status: :unprocessable_entity, notice: 'Error creating communication.'
+    respond_to do |format|
+      if @communication.save
+        # Successful form submission
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(
+            "communication_form",
+            partial: "pages/communications/successMessage"
+          )
+        end
+
+        format.html do
+          # fallback for non-Turbo requests
+          redirect_to root_path, notice: "Communication was successfully created."
+        end
+      else
+        # Form failed validation
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(
+            "communication_form",
+            partial: "pages/communications/form",
+            locals: { communication: @communication }
+          )
+        end
+
+        format.html do
+          if request.headers["Accept"]&.include?("text/vnd.turbo-stream.html")
+            head :unprocessable_entity
+          else
+            render "pages/contact", status: :unprocessable_entity
+          end
+        end
+      end
     end
   end
 

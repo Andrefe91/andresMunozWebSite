@@ -1,0 +1,40 @@
+<turbo-frame id="communication_form">
+    <div data-controller="character-counter" class="mt-5 border rounded-xl p-2 ">
+        <%= form_with model: communication,
+                    class:"flex flex-col divide-y-1 divide-borderColor/35",
+                    url: communications_path,
+                    data: { turbo_frame: "communication_form" } do |form| %>
+
+        <div class="flex flex-row py-2">
+            <%= form.text_area :message, placeholder: "Write a message...", class: "grow caret-button focus:outline-none",
+            data: {character_counter_target: "field", action: "input->character-counter#updateCount"} %>
+        </div>
+
+        <div class="flex flex-row py-2">
+            <%= form.text_field :email, placeholder: "optional@email.com (If you'd like a response)", class: "grow focus:outline-none text-wrap" %>
+        </div>
+
+        <div class="container flex flex-row justify-between items-center mt-2">
+            <div class="word-count">
+            <span data-character-counter-target="counter">0</span><span class="text-textColor/50">/1000</span>
+            </div>
+
+            <div>
+            <%= form.submit "Send", class: "bg-button cursor-pointer hover:bg-buttonHover hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 text-textColor font-bold px-4 py-1 rounded-md mt-5 duration-200 ease-in-out" %>
+            </div>
+        </div>
+
+        <% end %>
+
+    </div>
+
+    <% if communication.errors.any? %>
+        <div class="error-messages underline text-red-400 mt-1 text-center">
+        <ul>
+            <% communication.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+</turbo-frame>
