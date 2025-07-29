@@ -1,28 +1,33 @@
-<%= form_with model: @communication, url: communications_path do |form| %>
-  <% if @communication.errors.any? %>
-    <div class="error-messages">
-      <h4><%= pluralize(@communication.errors.count, "error") %> prohibited this message from being saved:</h4>
-      <ul>
-        <% @communication.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div data-controller="character-counter">
+  <%= form_with model: @communication, url: communications_path do |form| %>
+    <% if @communication.errors.any? %>
+      <div class="error-messages">
+        <h4><%= pluralize(@communication.errors.count, "error") %> prohibited this message from being saved:</h4>
+        <ul>
+          <% @communication.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <div>
+        <%= form.label :message %>
+        <%= form.textarea :message, placeholder: "Write a message...", class: "",
+        data: {character_counter_target: "field", action: "input->character-counter#updateCount"} %>
+      </div>
+
+      <div>
+        <%= form.label :email %>
+        <%= form.text_field :email, placeholder: "optional@email.com (If you'd like a response)" %>
+      </div>
+
+      <div class="word-count">
+        Words: <span data-character-counter-target="counter">0</span>/1000
+      </div>
+
+      <div>
+        <%= form.submit "Send" %>
+      </div>
   <% end %>
-
-    <div>
-      <%= form.label :message %>
-      <%= form.textarea :message, placeholder: "Write a message...", class: "" %>
-    </div>
-
-    <div>
-      <%= form.label :email %>
-      <%= form.text_field :email, placeholder: "optional@email.com (If you'd like a response)" %>
-    </div>
-
-
-
-    <div>
-      <%= form.submit "Send" %>
-    </div>
-<% end %>
+</div>

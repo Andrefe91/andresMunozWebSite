@@ -16,7 +16,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_28_160530) do
 
   create_table "communications", force: :cascade do |t|
     t.string "email"
-    t.string "message", limit: 500
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
