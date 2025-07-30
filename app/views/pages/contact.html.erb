@@ -1,18 +1,37 @@
 <div class="container max-w-200 grow content-center">
-  <div class="personalInformation flex flex-row items-center">
-    <div class="personalImage aspect-square mask-clip-border rounded-3xl  min-w-15 bg-cyan-500"></div>
-    <div class="text-2xl ml-4">Andres Felipe Muñoz</div>
+  <div class="container section">
+    <div class="personalInformation flex flex-row items-center">
+      <div class="personalImage aspect-square mask-clip-border rounded-3xl  min-w-15 bg-cyan-500"></div>
+      <div class="text-2xl ml-4 font-semibold">Andres Felipe Muñoz</div>
+    </div>
+    <div class="container flex flex-row mt-4">
+      <div class="personalImage aspect-square rounded-3xl  max-w-15 ">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 12 604" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <g transform="matrix(1,0,0,1,-2371.37,-2205.65)">
+        <g transform="matrix(1,0,0,1,1897.05,2905.43)">
+            <g transform="matrix(1,0,0,1.30563,-1897.05,-3581.26)">
+                <path d="M2376.96,2211.24L2376.96,2664.63" style="fill:none;stroke:var(--color-textColor);stroke-width:9.62px;"/>
+            </g>
+        </g>
+    </g>
+</svg>
+      </div>
+      <p class="text-lg/8 ml-4">Hey there, thank you for visiting my website!
+        Feel free to reach out to me with any questions, comments, or just to say hello!.</p>
+    </div>
+    <turbo-frame id="communication_form">
+      <%= render "pages/communications/form", communication: @communication %>
+    </turbo-frame>
   </div>
 
-  <div class="container flex flex-row mt-4">
-    <div class="personalImage aspect-square rounded-3xl  min-w-15 "></div>
-    <p class="text-lg/8 ml-4">Hey there, thank you for visiting my website!
-      Feel free to reach out to me with any questions, comments, or just to say hello!.</p>
+  <div class="container flex flex-row justify-center mt-8 gap-8 ">
+    <a href="https://www.linkedin.com/in/andres-felipe-m/?locale=en_US">
+    <%= inline_svg_tag "icons/logo_linkedin.svg", alt:"LinkedIn Logo", class: "object-contain h-10 fill-textColor hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 hover:stroke-button hover:stroke-2" %>
+    </a>
+
+    <a href="https://github.com/Andrefe91">
+    <%= inline_svg_tag "icons/logo_github.svg", alt:"Github Logo", class: "object-contain h-10 fill-textColor hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 hover:stroke-button hover:stroke-2" %>
+    </a>
   </div>
-
-  <turbo-frame id="communication_form">
-    <%= render "pages/communications/form", communication: @communication %>
-  </turbo-frame>
-
 </div>
 
