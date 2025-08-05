@@ -1,4 +1,63 @@
+<%# Lets load the data first %>
+<% projects = projects_hash['projects'] %>
+
 <div>
-  <h1 class="font-bold text-4xl">Projects</h1>
-  <p>Find me in app/views/pages/index.html.erb</p>
+  <h1 class="font-bold text-4xl mb-10 text-center font-titleBasis">Projects</h1>
+
+  <div class="container mb-5 mx-2 pr-4 text-justify" >
+    <p class=""> Below you can find the projects that i have worked as the main designer or at least the one who took
+      the majority of the decisions regarding the design, including selecting the structural solution to implement for
+      the given requirements.
+    </p>
+
+    <p class="mt-5">This table is not intended to show all the projects i have work on as an independent engineer, but
+      rather to highlight those where i had a significant role in the design process or that were particularly interesting
+      or challenging. The projects are listed in chronological order, starting with the older ones.
+    </p>
+  </div>
+</div>
+
+<div class="section hidden md:block">
+  <table class="table-fixed  border border-(--color-tableBorderExternal) rounded-xs border-separate">
+    <thead class="bg-(--color-tableHeaderBackground) border border-(--color-tableBorderInternal) sticky top-0">
+      <tr>
+        <th class="w-1/7 border border-(--color-tableBorderInternal) p-1">Project Name</th>
+        <th class="w-1/14 border border-(--color-tableBorderInternal) p-1">Structural System</th>
+        <th class="w-1/12 border border-(--color-tableBorderInternal) p-1">System Material</th>
+        <th class="w-2/7 border border-(--color-tableBorderInternal) p-1">Short Description</th>
+        <th class="w-1/14 border border-(--color-tableBorderInternal) p-1">Software Used</th>
+        <th class="w-1/14 border border-(--color-tableBorderInternal) p-1">Area (m²)</th>
+        <th class="w-1/14 border border-(--color-tableBorderInternal) p-1">Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% projects.each do |project| %>
+        <tr class="hover:bg-(--color-tableRowBackground) transition-colors duration-150">
+          <td class="border border-(--color-tableBorderInternal) p-1 rounded-sm "><%= project['project_name'] %></td>
+          <td class="border border-(--color-tableBorderInternal) p-1 text-center rounded-sm"><%= project['structural_system'] %></td>
+          <td class="border border-(--color-tableBorderInternal) p-1 text-center rounded-sm"><%= project['system_material'] %></td>
+          <td class="border border-(--color-tableBorderInternal) p-1 rounded-sm"><%= project['short_description']%></td>
+          <td class="border border-(--color-tableBorderInternal) p-1 text-center rounded-sm"><%= project['software_used']%></td>
+          <td class="border border-(--color-tableBorderInternal) p-1 text-center rounded-sm"><%= project['area'] %></td>
+          <td class="border border-(--color-tableBorderInternal) p-1 text-center rounded-sm"><%= project['year'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="section md:hidden">
+  <ul class="list-none">
+    <% projects.each do |project| %>
+      <li class="border border-(--color-tableBorderInternal) p-2 mb-2 rounded-sm hover:bg-(--color-tableRowBackground) transition-colors duration-150">
+        <h3 class="font-bold text-lg text-center mb-2 underline decoration-(--color-skillTitleDecoration) italic"><%= project['project_name'] %></h3>
+        <p ><strong>Structural System:</strong> <%= project['structural_system'] %></p>
+        <p><strong>System Material:</strong> <%= project['system_material'] %></p>
+        <p><strong>Description:</strong> <%= project['short_description'] %></p>
+        <p><strong>Software Used:</strong> <%= project['software_used'] %></p>
+        <p><strong>Area (m²):</strong> <%= project['area'] %> </p>
+        <p><strong>Year:</strong> <%= project['year'] %></p>
+      </li>
+    <% end %>
+  </ul>
 </div>

@@ -25,6 +25,11 @@
 	--color-skillContentBackground: #2d3142;
 	--color-skillTitleDecoration: #71f79f;
 
+	--color-tableBorderExternal: #6D7886;
+	--color-tableBorderInternal: #6D7886;
+	--color-tableHeaderBackground: #101E30;
+	--color-tableRowBackground: #1D2734;
+
 	--animate-bounce: bounce 3s ease-in-out infinite;
 
 	@keyframes bounce {
