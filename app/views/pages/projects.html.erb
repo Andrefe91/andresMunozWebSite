@@ -61,3 +61,20 @@
     <% end %>
   </ul>
 </div>
+
+<div class="container">
+  <div class="text-lg text-center font-titleBasis">If you feel i can help you with a project, contact me !</div>
+
+  <%= button_to 'Contact', contact_path, method: :get, class: "
+  bg-button cursor-pointer inset-ring hover:bg-buttonHover hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 text-lg text-textColor font-bold px-8 py-3 rounded-md mt-5 duration-200 ease-in-out" %>
+
+  <div class="container flex flex-row justify-center mt-4 gap-4 ">
+      <a href="https://www.linkedin.com/in/andres-felipe-m/?locale=en_US">
+      <%= inline_svg_tag "icons/logo_linkedin.svg", alt:"LinkedIn Logo", class: "object-contain h-7 fill-textColor hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 hover:stroke-button hover:stroke-2" %>
+      </a>
+
+      <a href="https://github.com/Andrefe91">
+      <%= inline_svg_tag "icons/logo_github.svg", alt:"Github Logo", class: "object-contain h-7 fill-textColor hover:drop-shadow-md/100 hover:drop-shadow-buttonShadow/100 hover:stroke-button hover:stroke-2" %>
+      </a>
+  </div>
+</div>
