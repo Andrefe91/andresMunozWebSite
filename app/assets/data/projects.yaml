@@ -1,0 +1,88 @@
+projects:
+  - project_name: "Sports Performance Center"
+    structural_system: "Moment Frames"
+    system_material: "Steel with Composite Columns"
+    short_description: "Structural Design of the Sports Performance Center built in the city of Neiva for recreation and athletics"
+    software_used: "Etabs - Sap2000"
+    area: 5589
+    year: 2018
+
+  - project_name: "Technical School of Neiva"
+    structural_system: "Moment Frames"
+    system_material: "Reinforced Concrete"
+    short_description: "Structural design of the four building blocks comprising the 'Colegio Técnico' institution in the city of Neiva"
+    software_used: "Etabs"
+    area: 11450
+    year: 2020
+
+  - project_name: "Mega Schools of Cali"
+    structural_system: "Moment Frames"
+    system_material: "Reinforced Concrete"
+    short_description: "Review of the structural design for six large-scale educational facilities in Cali, Colombia"
+    software_used: "Etabs"
+    area: 10974
+    year: 2020
+
+  - project_name: "Mega Schools of Cali"
+    structural_system: "Moment Frames"
+    system_material: "Reinforced Concrete"
+    short_description: "Structural design of seven mega-schools in the city of Cali, based on the review of their previous designs"
+    software_used: "CypeCad"
+    area: 16056
+    year: 2020
+
+  - project_name: "Mosquera City Hall"
+    structural_system: "Special Shear Walls"
+    system_material: "Reinforced Concrete"
+    short_description: "Structural design of the new City Hall building in the municipality of Mosquera, Cundinamarca"
+    software_used: "Etabs"
+    area: 3323
+    year: 2021
+
+  - project_name: "Yaguara City Hall"
+    structural_system: "Moment Frames"
+    system_material: "Reinforced Concrete"
+    short_description: "Structural vulnerability assessment of the existing City Hall building in Yaguará, including field testing and dynamic analysis"
+    software_used: "Etabs"
+    area: 1392
+    year: 2021
+
+  - project_name: "Sport Court for Algeciras, Alpujarra, La Argentina, Pitalito, Prado, Quinchia, Ambalema, Rovira, San Jose"
+    structural_system: "Moment Frames"
+    system_material: "Reinforced Concrete"
+    short_description: "Design of sports centers for communities across multiple municipalities in the department of Huila, developed for recreation and athletic activities"
+    software_used: "CypeCad"
+    area: 2295
+    year: 2021
+
+  - project_name: "Souther Neiva Bus Terminal"
+    structural_system: "Moment Frames"
+    system_material: "Reinforced Concrete"
+    short_description: "Structural design of the administrative building and main bus shelters at the South Terminal in the city of Neiva."
+    software_used: "CypeCad"
+    area: 2405
+    year: 2022
+
+  - project_name: "Regional Aqueduct, La Barniza Village"
+    structural_system: "Concrete Walls"
+    system_material: "Reinforced Concrete"
+    short_description: "Structural design of the main hydraulic structures for the potable water treatment plant in La Barniza village"
+    software_used: "Sap2000"
+    area: 450
+    year: 2024
+
+  - project_name: "Supervision of the structural design of the Artificial Intelligence Centers in Usme and Zipaquirá"
+    structural_system: "Shear Walls - Diagrid"
+    system_material: "Reinforced Concrete"
+    short_description: "Supervision of the structural design of the laboratory structures for the Artificial Intelligence Research Centers in Usme and Mosquera, Cundinamarca."
+    software_used: "---"
+    area: "---"
+    year: 2024
+
+  - project_name: "Huila's Schools"
+    structural_system: "Moment Frames"
+    system_material: "Steel"
+    short_description: "Structural vulnerability assessment of 42 different buildings belonging to seven schools built in the department of Huila"
+    software_used: "Cype 3D"
+    area: 5250
+    year: 2025
