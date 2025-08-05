@@ -2,18 +2,15 @@
 <% projects = projects_hash['projects'] %>
 
 <div>
-  <h1 class="font-bold text-4xl mb-10 text-center font-titleBasis">Projects</h1>
+  <h1 class="font-bold text-4xl mb-10 text-center font-titleBasis text-(--color-textColorTitle) textTitleShadow">Projects</h1>
 
   <div class="container mb-5 mx-2 pr-4 text-justify" >
-    <p class=""> Below you can find the projects that i have worked as the main designer or at least the one who took
-      the majority of the decisions regarding the design, including selecting the structural solution to implement for
-      the given requirements.
+    <p class=""> Below you can find the projects where I was the lead structural engineer, that is, the one making the
+      key design decisions and choosing how to actually build the thing. I've picked the ones that were either
+      particularly challenging, interesting, or just good examples of the kind of work I do.
     </p>
 
-    <p class="mt-5">This table is not intended to show all the projects i have work on as an independent engineer, but
-      rather to highlight those where i had a significant role in the design process or that were particularly interesting
-      or challenging. The projects are listed in chronological order, starting with the older ones.
-    </p>
+    <p class="mt-5">Just so you know, not every project I've touched is here, just the ones worth talking about.</p>
   </div>
 </div>
 
@@ -51,12 +48,12 @@
     <% projects.each do |project| %>
       <li class="border border-(--color-tableBorderInternal) p-2 mb-2 rounded-sm hover:bg-(--color-tableRowBackground) transition-colors duration-150">
         <h3 class="font-bold text-lg text-center mb-2 underline decoration-(--color-skillTitleDecoration) italic"><%= project['project_name'] %></h3>
-        <p ><strong>Structural System:</strong> <%= project['structural_system'] %></p>
-        <p><strong>System Material:</strong> <%= project['system_material'] %></p>
-        <p><strong>Description:</strong> <%= project['short_description'] %></p>
-        <p><strong>Software Used:</strong> <%= project['software_used'] %></p>
-        <p><strong>Area (m²):</strong> <%= project['area'] %> </p>
-        <p><strong>Year:</strong> <%= project['year'] %></p>
+        <p ><strong class="underline">Structural System:</strong> <%= project['structural_system'] %></p>
+        <p><strong class="underline">System Material:</strong> <%= project['system_material'] %></p>
+        <p><strong class="underline">Description:</strong> <%= project['short_description'] %></p>
+        <p><strong class="underline">Software Used:</strong> <%= project['software_used'] %></p>
+        <p><strong class="underline">Area (m²):</strong> <%= project['area'] %> </p>
+        <p><strong class="underline">Year:</strong> <%= project['year'] %></p>
       </li>
     <% end %>
   </ul>

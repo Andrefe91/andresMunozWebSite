@@ -6,7 +6,7 @@
                     data: { turbo_frame: "communication_form" } do |form| %>
 
         <div class="flex flex-row py-2">
-            <%= form.text_area :message, placeholder: "Write a message...", class: "grow caret-button focus:outline-none",
+            <%= form.text_area :message, placeholder: "Write a message...", class: "grow focus:outline-none",
             data: {character_counter_target: "field", action: "input->character-counter#updateCount"} %>
         </div>
 

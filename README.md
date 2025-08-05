@@ -1,5 +1,3 @@
-# README
-
 # Andres Muñoz Website
 
 A personal portfolio website built with Ruby on Rails as backend and TailwindCSS for styling showcasing my work as a

@@ -1,23 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playwrite+AU+QLD:wght@100..400&display=swap');
 @import "tailwindcss";
 
 @theme {
 	--font-textBasis: "Inter", sans-serif;
 	--font-titleBasis: "Russo One", sans-serif;
+	--font-coding:"Pixelify Sans", sans-serif;
+	--font-visualDesign:"Playwrite AU QLD", cursive;
 
 	--color-primary: #33445c;
 	--color-secondary: #041B25;
 	--color-tint: #f9564f;
 
-	--color-button: #11927d;
-	--color-buttonHover: #15b097;
+	--color-button: #1CA275;
+	--color-buttonHover: #2CABB7;
 
 	--color-buttonShadow: #0a2342;
 	--color-borderColor: #ababab;
 
 	--color-icon-shadow: #0a2342;
 
+	--color-textColorTitle: #d1d1d1;
 	--color-textColor: #d1d1d1;
 	--color-textColorBack: #182b47;
 
@@ -68,6 +72,10 @@
 @layer components {
 	.textNameShadow {
 		text-shadow: 2px 1px 0px #182b47, 4px 2px 0px #071426;
+	}
+
+	.textTitleShadow {
+		text-shadow: 3px 2px 0px #071426;
 	}
 
 	.section {
