@@ -95,7 +95,13 @@
 		}
 	}
 
+	.slide {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+	}
+
 	.slideBackgroundSettings::before {
+		will-change: auto;
 		content: "";
 		position: absolute;
 		top: 0;
