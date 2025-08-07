@@ -71,3 +71,5 @@ gem "foreman", "~> 0.88.1"
 gem "inline_svg", "~> 1.10"
 
 gem "rspec", "~> 3.13"
+
+gem "dockerfile-rails", ">= 1.7", group: :development
