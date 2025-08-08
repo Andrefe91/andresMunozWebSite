@@ -5,7 +5,7 @@
 
 app = 'andresmunozwebsite'
 primary_region = 'syd'
-console_command = '/rails/bin/rails console'
+console_command = 'bundle exec rails console'
 
 [build]
 
@@ -21,7 +21,7 @@ console_command = '/rails/bin/rails console'
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = 'suspend'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']

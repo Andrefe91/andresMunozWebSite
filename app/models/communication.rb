@@ -15,6 +15,7 @@ class Communication < ApplicationRecord
     Rails.logger.error "Failed to send message email: #{e.message}"
   end
 
+  # Sanitize the message to allow only specific HTML tags
   def sanitize_message
     self.message = sanitize(self.message, tags: %w[p br strong em ul ol li])
   rescue StandardError => e
