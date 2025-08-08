@@ -10,7 +10,7 @@ class Communication < ApplicationRecord
   private
 
   def send_message_email
-    MessageMailer.with(communication: self).new_message.deliver_later
+    MessageMailer.with(communication: self).new_message.deliver_now
   rescue StandardError => e
     Rails.logger.error "Failed to send message email: #{e.message}"
   end
