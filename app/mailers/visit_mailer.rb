@@ -7,6 +7,6 @@ class VisitMailer < ApplicationMailer
   def qr_visit
     @visit = params[:visit]
 
-    mail(to: Rails.application.credentials.personal.email, subject: "New visit through the QR card")
+    mail(to: Rails.application.credentials.personal.email, subject: "New visit through the QR card - Id: #{@visit.id}")
   end
 end

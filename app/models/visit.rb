@@ -13,7 +13,7 @@ class Visit < ApplicationRecord
   private
 
   def send_qr_visit_email
-    VisitMailer.with(visit: @visit).qr_visit.deliver_now
+    VisitMailer.with(visit: self).qr_visit.deliver_now
   rescue StandardError => e
     Rails.logger.error "Failed to send QR visit email"
   end
