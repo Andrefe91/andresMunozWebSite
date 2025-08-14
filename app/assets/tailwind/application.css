@@ -4,6 +4,7 @@
 @import "tailwindcss";
 
 @theme {
+
 	--font-textBasis: "Inter", sans-serif;
 	--font-titleBasis: "Russo One", sans-serif;
 	--font-coding:"Pixelify Sans", sans-serif;
