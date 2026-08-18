@@ -157,6 +157,8 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailtrap (2.14.0)
+      base64
     marcel (1.2.1)
     matrix (0.4.3)
     mini_mime (1.1.5)
@@ -411,6 +413,7 @@ DEPENDENCIES
   inline_svg (~> 1.10)
   jbuilder
   kamal
+  mailtrap (~> 2.14)
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

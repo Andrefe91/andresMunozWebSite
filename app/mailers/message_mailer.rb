@@ -7,6 +7,6 @@ class MessageMailer < ApplicationMailer
   def new_message
     @message = params[:communication]
 
-    mail(to: Rails.application.credentials.personal.email, subject: "New message through the webpage")
+    mail(to: Rails.application.credentials.personal.email, subject: "New message through the webpage - Id: #{@message.id}")
   end
 end
